@@ -1,6 +1,6 @@
 # lush_temple_app
 
-A new Flutter project.
+Thank you iLab Africa for the opurtunity in taking the Full-Stack Software Dev Course. Here is my final project for the class as I made my own flutter application. 
 
 ## Getting Started
 
