@@ -5,6 +5,8 @@ Thank you iLabAfrica for the opurtunity in taking the Full-Stack Software Dev Co
 About the application
 Lush Temple is a flutter application used for it's e-commerce purposes. It's represented as a small business body & thearputic shop. Highlighting SDG #3 Good Health & Wellness promoting natural products elliminary of toxic chemicals with a holistic approach to the business. 
 
+![Lush temple poster](https://github.com/nombogo/LushTempleApp/blob/main/ltposter.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
