@@ -1,6 +1,9 @@
 # lush_temple_app
 
-Thank you iLab Africa for the opurtunity in taking the Full-Stack Software Dev Course. Here is my final project for the class as I made my own flutter application. 
+Thank you iLabAfrica for the opurtunity in taking the Full-Stack Software Dev Course. Here is my final project for the class as I made my own flutter application. 
+
+About the application
+Lush Temple is a flutter application used for it's e-commerce purposes. It's represented as a small business body & thearputic shop. Highlighting SDG #3 Good Health & Wellness promoting natural products elliminary of toxic chemicals with a holistic approach to the business. 
 
 ## Getting Started
 
