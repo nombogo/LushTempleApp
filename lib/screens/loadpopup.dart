@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lush_temple_app/screens/homepage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -12,28 +13,26 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 225, 223, 171),
+      backgroundColor: Color.fromARGB(255, 255, 223, 171),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 80.0, right: 80, bottom: 40, top: 160),
-            child: Image.asset('assets/ltlogo.jpg'),           
-          ),
-          const Padding(
-            padding: EdgeInsets.all(20.0),
-          child: Text(
-            "Experience the Lush",
-            textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 40,
-            fontFamily: 'Papyrus',
-            color: Color.fromARGB(255, 69, 43, 0),
-          ),
-          ),
-          ),
-          Padding(padding: const EdgeInsets.all(80.0),
-          child: Image.asset('/assets/rightflower.jpeg')
-          ),
+         Padding(
+  padding: EdgeInsets.only(left: 20.0, right: 20, bottom: 130, top: 220),
+  child: Image.asset('assets/ltlogo.jpg'),           
+),
+Padding(
+  padding: EdgeInsets.only(left: 50, right: 50, bottom: 110, top: 0.50),
+  child: Text(
+    "Experience the Lush",
+    textAlign: TextAlign.center,
+    style: GoogleFonts.aboreto(
+      fontSize: 24,
+      color: Color.fromARGB(255, 69, 43, 0),
+    ),
+  ),
+),
+
+          
       const SizedBox(height: 10),
             SizedBox(
               width: 200.0, // Make button full width
@@ -50,11 +49,11 @@ class _LoadingPageState extends State<LoadingPage> {
                     backgroundColor: const Color.fromRGBO(115, 63, 0, .55),
                     padding: const EdgeInsets.symmetric(vertical: 11), // Increase vertical padding
                   ),
-                   child: const Text("explore", 
+                   child: const Text("Get Started", 
                    textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 40,
-            fontFamily: 'Papyrus',
+            fontSize: 27,
+            fontFamily: 'Gothic',
             color: Color.fromARGB(255, 69, 43, 0),),
       ),
               ),

@@ -41,48 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDt1v9RA1SjVabCY58G0_Lisou-GxJy_BU',
-    appId: '1:865097636802:web:fda49dd8bbe5873752945b',
-    messagingSenderId: '865097636802',
-    projectId: 'lushtemple-6e523',
-    authDomain: 'lushtemple-6e523.firebaseapp.com',
-    storageBucket: 'lushtemple-6e523.appspot.com',
-    measurementId: 'G-TJ1FV8L0T5',
+    apiKey: 'AIzaSyDClFVQQXdDqxDQv1hc3yxJoYA59AsN9xc',
+    appId: '1:244602236458:web:2bf2bc55a0122434b0dd53',
+    messagingSenderId: '244602236458',
+    projectId: 'lushtempleapp',
+    authDomain: 'lushtempleapp.firebaseapp.com',
+    storageBucket: 'lushtempleapp.appspot.com',
+    measurementId: 'G-G9V9L42QZC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA33OpDq5vnfFTGCULUHD14kwOlU7xcjQY',
-    appId: '1:865097636802:android:c18ec4f65635ecf952945b',
-    messagingSenderId: '865097636802',
-    projectId: 'lushtemple-6e523',
-    storageBucket: 'lushtemple-6e523.appspot.com',
+    apiKey: 'AIzaSyAQ-UYiuWc7Vk6frdEtBLd-yoQoBUBHCK4',
+    appId: '1:244602236458:android:fcea91fc8f418536b0dd53',
+    messagingSenderId: '244602236458',
+    projectId: 'lushtempleapp',
+    storageBucket: 'lushtempleapp.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBUZIO5SCu5v4IEO0uPGtgAK0TDGutpis8',
-    appId: '1:865097636802:ios:fd8b066a9c52ad8752945b',
-    messagingSenderId: '865097636802',
-    projectId: 'lushtemple-6e523',
-    storageBucket: 'lushtemple-6e523.appspot.com',
+    apiKey: 'AIzaSyDdlNp6MEYaznUILxzDnb8TSdFQZ5zuAH0',
+    appId: '1:244602236458:ios:0e2e3df9f22198bab0dd53',
+    messagingSenderId: '244602236458',
+    projectId: 'lushtempleapp',
+    storageBucket: 'lushtempleapp.appspot.com',
     iosBundleId: 'com.example.lushTempleApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBUZIO5SCu5v4IEO0uPGtgAK0TDGutpis8',
-    appId: '1:865097636802:ios:fd8b066a9c52ad8752945b',
-    messagingSenderId: '865097636802',
-    projectId: 'lushtemple-6e523',
-    storageBucket: 'lushtemple-6e523.appspot.com',
+    apiKey: 'AIzaSyDdlNp6MEYaznUILxzDnb8TSdFQZ5zuAH0',
+    appId: '1:244602236458:ios:0e2e3df9f22198bab0dd53',
+    messagingSenderId: '244602236458',
+    projectId: 'lushtempleapp',
+    storageBucket: 'lushtempleapp.appspot.com',
     iosBundleId: 'com.example.lushTempleApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDt1v9RA1SjVabCY58G0_Lisou-GxJy_BU',
-    appId: '1:865097636802:web:b533cba089248efc52945b',
-    messagingSenderId: '865097636802',
-    projectId: 'lushtemple-6e523',
-    authDomain: 'lushtemple-6e523.firebaseapp.com',
-    storageBucket: 'lushtemple-6e523.appspot.com',
-    measurementId: 'G-33J877KD1W',
+    apiKey: 'AIzaSyDClFVQQXdDqxDQv1hc3yxJoYA59AsN9xc',
+    appId: '1:244602236458:web:805bb0c6eb4bc8ddb0dd53',
+    messagingSenderId: '244602236458',
+    projectId: 'lushtempleapp',
+    authDomain: 'lushtempleapp.firebaseapp.com',
+    storageBucket: 'lushtempleapp.appspot.com',
+    measurementId: 'G-XFHBVKML59',
   );
+
 }

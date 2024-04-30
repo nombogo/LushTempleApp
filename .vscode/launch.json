@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart"
+        },
+        {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Flutter (lib/firebase_core.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/firebase_core.dart"
+        }
+    ]
+}

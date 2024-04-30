@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBUZIO5SCu5v4IEO0uPGtgAK0TDGutpis8</string>
+	<string>AIzaSyDdlNp6MEYaznUILxzDnb8TSdFQZ5zuAH0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>865097636802</string>
+	<string>244602236458</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.lushTempleApp</string>
 	<key>PROJECT_ID</key>
-	<string>lushtemple-6e523</string>
+	<string>lushtempleapp</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lushtemple-6e523.appspot.com</string>
+	<string>lushtempleapp.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:865097636802:ios:fd8b066a9c52ad8752945b</string>
+	<string>1:244602236458:ios:0e2e3df9f22198bab0dd53</string>
 </dict>
 </plist>

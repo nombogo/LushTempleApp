@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "865097636802",
-    "project_id": "lushtemple-6e523",
-    "storage_bucket": "lushtemple-6e523.appspot.com"
+    "project_number": "244602236458",
+    "project_id": "lushtempleapp",
+    "storage_bucket": "lushtempleapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:865097636802:android:c18ec4f65635ecf952945b",
+        "mobilesdk_app_id": "1:244602236458:android:fcea91fc8f418536b0dd53",
         "android_client_info": {
           "package_name": "com.example.lush_temple_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA33OpDq5vnfFTGCULUHD14kwOlU7xcjQY"
+          "current_key": "AIzaSyAQ-UYiuWc7Vk6frdEtBLd-yoQoBUBHCK4"
         }
       ],
       "services": {
