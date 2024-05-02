@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lush_temple_app/screens/accounts/login.dart';
 import 'package:lush_temple_app/screens/homepage.dart';
 
 class Register extends StatefulWidget {
@@ -13,6 +14,16 @@ class _RegisterState extends State<Register> {
 Widget build(BuildContext context) {
   return Scaffold(
     backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context); // Navigate back to the previous screen
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+        backgroundColor: Colors.transparent, // Set the background color to transparent
+        elevation: 0, // Remove the shadow
+      ),
     body: Center(
       child: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -87,6 +98,24 @@ Widget build(BuildContext context) {
                 ),
               ),
             ),
+                 GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => Login(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Already have an account?',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
           ],
         ),
       ),

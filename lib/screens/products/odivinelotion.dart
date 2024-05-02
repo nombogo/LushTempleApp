@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 
-class ContactThankYou extends StatefulWidget {
-  const ContactThankYou({super.key});
+class DivineLotion extends StatefulWidget {
+  const DivineLotion({super.key});
 
   @override
-  State<ContactThankYou> createState() => _ContactThankYouState();
+  State<DivineLotion> createState() => _DivineLotionState();
 }
 
-class _ContactThankYouState extends State<ContactThankYou> {
+class _DivineLotionState extends State<DivineLotion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 223, 171),
-      appBar: AppBar(
+        appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
           child: Icon(Icons.arrow_back),
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        backgroundColor: Colors.transparent, // Set the background color to transparent
+        elevation: 0, // Remove the shadow
       ),
       body: Center(
-        child: Text("Thank you for contacting us. We will get back to you soon."),
+        child: Text("Divine Lotion"),
       ),
+     
     );
   }
 }

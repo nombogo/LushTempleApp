@@ -17,6 +17,16 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 223, 171),
+        appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context); // Navigate back to the previous screen
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+        backgroundColor: Colors.transparent, // Set the background color to transparent
+        elevation: 0, // Remove the shadow
+      ),
       body: Center(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(16.0),
@@ -104,6 +114,7 @@ class _LoginState extends State<Login> {
                 },
                 child: Text(
                   'Forgot Password',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
@@ -122,6 +133,7 @@ class _LoginState extends State<Login> {
                 },
                 child: Text(
                   'Don\'t have an account? Register',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CheckOut extends StatefulWidget {
-  const CheckOut({super.key});
+class DivineScrub extends StatefulWidget {
+  const DivineScrub({super.key});
 
   @override
-  State<CheckOut> createState() => _CheckOutState();
+  State<DivineScrub> createState() => _DivineScrubState();
 }
 
-class _CheckOutState extends State<CheckOut> {
+class _DivineScrubState extends State<DivineScrub> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +22,10 @@ class _CheckOutState extends State<CheckOut> {
         backgroundColor: Colors.transparent, // Set the background color to transparent
         elevation: 0, // Remove the shadow
       ),
-      body: Center(
-        child: Text("CheckOut"),
-      ),
+      body:
+        Center(
+          child: Text('Divine Scrub'),
+        )
     );
   }
 }

@@ -25,6 +25,8 @@ class _ProductItemTileState extends State<ProductItemTile> {
   Widget build(BuildContext context) {
     
    return Container( 
+    padding: EdgeInsets.all(12.0),
+    decoration: BoxDecoration(color: Colors.brown),
       child: Column(children: [
         Image.asset(widget.productImage), // Added 'widget.' before productImage
         Text(widget.productName), // Added 'widget.' before productName
