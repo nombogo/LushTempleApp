@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lush_temple_app/model/cart_model.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final String productName;
@@ -25,7 +26,8 @@ class ProductDetailPage extends StatelessWidget {
           },
           child: Icon(Icons.arrow_back),
         ),
-        backgroundColor: Colors.transparent, // Set the background color to transparent
+        backgroundColor:
+            Colors.transparent, // Set the background color to transparent
         elevation: 0, // Remove the shadow
       ),
       body: Center(
@@ -52,7 +54,11 @@ class ProductDetailPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Implement add to cart functionality here
+                cartItems().addToCart();
+               
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Added to cart'),
+                ));
               },
               child: Text('Add to Cart'),
             ),
@@ -61,4 +67,6 @@ class ProductDetailPage extends StatelessWidget {
       ),
     );
   }
+  
+  cartItems() {}
 }

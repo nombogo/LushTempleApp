@@ -218,5 +218,4 @@ class CartModel extends ChangeNotifier {
   }
   return totalPrice.toStringAsFixed(2);
 }
-
 }
