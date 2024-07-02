@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lush_temple_app/screens/inquires/contactus.dart';
 
 class FAQContact extends StatefulWidget {

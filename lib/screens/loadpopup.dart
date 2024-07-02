@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lush_temple_app/screens/homepage.dart';
+import 'package:lush_temple_app/screens/accounts/login.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -41,7 +42,7 @@ Padding(
                 child: ElevatedButton(onPressed: (){
         Navigator.push
         (context, MaterialPageRoute
-        (builder: (BuildContext context) => const HomePage(),
+        (builder: (BuildContext context) => const Login(),
         ));
       },
      

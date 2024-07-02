@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lush_temple_app/model/cart_model.dart';
-import 'package:lush_temple_app/screens/products/grapevine.dart';
-import 'package:lush_temple_app/screens/products/serenesister.dart';
-import 'package:lush_temple_app/screens/products/sunpeace.dart';
-import 'package:lush_temple_app/screens/products/templetranquil.dart';
+import 'package:lush_temple_app/screens/accounts/profile.dart';
+import 'package:lush_temple_app/screens/checkout.dart';
+import 'package:lush_temple_app/screens/inquires/faq.dart';
+import 'package:lush_temple_app/screens/productDetailspage.dart';
 import 'package:provider/provider.dart';
 
 class Fragrance extends StatefulWidget {
@@ -28,7 +28,42 @@ class _FragranceState extends State<Fragrance> {
           child: Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent, // Set the background color to transparent
-        elevation: 0, // Remove the shadow
+        elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.phone),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => FAQContact(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => Profile(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_bag),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => CheckOut(),
+                ),
+              );
+            },
+          ),
+        ], // Remove the shadow
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -38,7 +73,7 @@ class _FragranceState extends State<Fragrance> {
              const SizedBox(height: 40),
               Center(
                 child: Text(
-                  'Candles',
+                  'Fragrances',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -55,34 +90,23 @@ class _FragranceState extends State<Fragrance> {
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 16.0,
                 ),
-                itemCount: productProvider.candleProducts.length,
+                itemCount: productProvider.fragranceProducts.length,
                 itemBuilder: (context, index) {
-                  final product = productProvider.candleProducts[index];
+                  final product = productProvider.fragranceProducts[index];
                   return GestureDetector(
                     onTap: () {
                       // Navigate to different pages based on the item
-                      if (index == 0) {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => SereneSister()),
-                        );
-                      }
-                      if (index == 1) {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (BuildContext context) => SunPeace())
-                          );
-                      }
-                       if (index == 2) {
-                        Navigator.push(
-                          context,
-                           MaterialPageRoute(builder: (BuildContext context) => TempleTranquil())
-                           );
-                       } 
-                       if (index == 3) {
-                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => GrapvineGossip())
-                        );
-                       }// Add more conditions for other items
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailPage(
+                            productName: product.name,
+                            productImage: product.image,
+                            productDescription: product.description,
+                            productPrice: product.price,
+                          ),
+                        ),
+                      );
                     },
                     child: Card(
                       child: Column(
@@ -94,6 +118,13 @@ class _FragranceState extends State<Fragrance> {
                               fit: BoxFit.cover,
                             ),
                           ),
+                                Padding(
+                      padding: EdgeInsets.all(0),
+                      child: Text(
+                        product.price,
+                        textAlign: TextAlign.center,
+                      ),
+                      ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(

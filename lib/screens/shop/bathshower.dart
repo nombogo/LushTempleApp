@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lush_temple_app/model/cart_model.dart';
-import 'package:lush_temple_app/screens/products/calmspringsbs.dart';
-import 'package:lush_temple_app/screens/products/floraloasisbar.dart';
-import 'package:lush_temple_app/screens/products/golddustbb.dart';
-import 'package:lush_temple_app/screens/products/heavenlyrainbar.dart';
-import 'package:lush_temple_app/screens/products/miraclemannabb.dart';
-import 'package:lush_temple_app/screens/products/oatberryhoneybar.dart';
-import 'package:lush_temple_app/screens/products/odivinescrub.dart';
-import 'package:lush_temple_app/screens/products/sacredskinsrub.dart';
-import 'package:lush_temple_app/screens/products/truerommancebs.dart';
+import 'package:lush_temple_app/screens/accounts/profile.dart';
+import 'package:lush_temple_app/screens/checkout.dart';
+import 'package:lush_temple_app/screens/inquires/faq.dart';
+import 'package:lush_temple_app/screens/productDetailspage.dart';
 import 'package:provider/provider.dart';
 
 class BathShower extends StatefulWidget {
@@ -34,6 +29,41 @@ class _BathShowerState extends State<BathShower> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.phone),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => FAQContact(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => Profile(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_bag),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => CheckOut(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -65,68 +95,17 @@ class _BathShowerState extends State<BathShower> {
                   final product = productProvider.bathshowerProducts[index];
                   return GestureDetector(
                     onTap: () {
-                      if (index == 0) {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  OatBerryHoney()),
-                        );
-                      } else if (index == 1) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => SacredSkin()),
-                        );
-                      } else if (index == 2) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  MiracleManna()),
-                        );
-                      } else if (index == 3) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => GoldDust()),
-                        );
-                      } else if (index == 4) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  HeveanlyRain()),
-                        );
-                      } else if (index == 5) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  FloralOasis()),
-                        );
-                      } else if (index == 6) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  CalmSprings()),
-                        );
-                      } else if (index == 7) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  TrueRommance()),
-                        );
-                      } else if (index == 8) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  DivineScrub()),
-                        );
-                      }
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailPage(
+                            productName: product.name,
+                            productImage: product.image,
+                            productDescription: product.description,
+                            productPrice: product.price,
+                          ),
+                        ),
+                      );
                     },
                     child: Card(
                       child: Column(
@@ -141,7 +120,7 @@ class _BathShowerState extends State<BathShower> {
                           Padding(
                       padding: EdgeInsets.all(0),
                       child: Text(
-                        '\$${product.price}ksh',
+                        product.price,
                         textAlign: TextAlign.center,
                       ),
                       ),

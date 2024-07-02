@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lush_temple_app/screens/accounts/register.dart';
-import 'package:lush_temple_app/screens/forgotpassword/forgotpass.dart';
+
 import 'package:lush_temple_app/screens/homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({Key? key});
 
   @override
   State<Login> createState() => _LoginState();
@@ -13,11 +14,49 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   bool _isObscured = true;
 
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
+  // Function to handle sign-in
+  Future<void> signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      // Navigate to home page on successful sign-in
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => HomePage(),
+        ),
+      );
+    } catch (e) {
+      // Handle sign-in errors here
+      print("Sign-in error: $e");
+      // Show a pop-up message when login fails
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Incorrect email or password'),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 223, 171),
-        appBar: AppBar(
+      appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
@@ -43,6 +82,7 @@ class _LoginState extends State<Login> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                     labelText: "Enter Email",
                     prefixIcon: Icon(Icons.mail),
@@ -60,6 +100,7 @@ class _LoginState extends State<Login> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: TextField(
+                  controller: passwordController,
                   obscureText: _isObscured,
                   decoration: InputDecoration(
                     labelText: "Enter Password",
@@ -82,14 +123,7 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: 12.0),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => HomePage(),
-                    ),
-                  );
-                },
+                onPressed: signIn, // Call the signIn function when the button is pressed
                 child: Text(
                   "Login",
                   style: TextStyle(color: Colors.white),
@@ -108,32 +142,13 @@ class _LoginState extends State<Login> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => ForgotPassword(),
-                    ),
-                  );
-                },
-                child: Text(
-                  'Forgot Password',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-              SizedBox(height: 24.0), // Added space between the login button and the registration text
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
                       builder: (BuildContext context) => Register(),
                     ),
                   );
                 },
                 child: Text(
                   'Don\'t have an account? Register',
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,

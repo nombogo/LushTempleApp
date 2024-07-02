@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lush_temple_app/model/cart_model.dart';
-import 'package:lush_temple_app/screens/products/princessshea.dart';
+import 'package:lush_temple_app/screens/accounts/profile.dart';
+import 'package:lush_temple_app/screens/checkout.dart';
+import 'package:lush_temple_app/screens/inquires/faq.dart';
+import 'package:lush_temple_app/screens/productDetailspage.dart';
 import 'package:provider/provider.dart';
 
 class Moisturizers extends StatefulWidget {
@@ -25,7 +28,42 @@ class _MoisturizersState extends State<Moisturizers> {
           child: Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent, // Set the background color to transparent
-        elevation: 0, // Remove the shadow
+        elevation: 0, 
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.phone),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => FAQContact(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => Profile(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_bag),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => CheckOut(),
+                ),
+              );
+            },
+          ),
+        ],// Remove the shadow
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -35,7 +73,7 @@ class _MoisturizersState extends State<Moisturizers> {
               SizedBox(height: 40),
               Center(
                 child: Text(
-                  'Candles',
+                  'Moisturizers',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -52,19 +90,23 @@ class _MoisturizersState extends State<Moisturizers> {
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 16.0,
                 ),
-                itemCount: productProvider.candleProducts.length,
+                itemCount: productProvider.moisturizerProducts.length,
                 itemBuilder: (context, index) {
-                  final product = productProvider.candleProducts[index];
+                  final product = productProvider.moisturizerProducts[index];
                   return GestureDetector(
                     onTap: () {
                       // Navigate to different pages based on the item
-                      if (index == 0) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => PrincessShea()),
-                        );
-                      } // Add more conditions for other items
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailPage(
+                            productName: product.name,
+                            productImage: product.image,
+                            productDescription: product.description,
+                            productPrice: product.price,
+                          ),
+                        ),
+                      );// Add more conditions for other items
                     },
                     child: Card(
                       child: Column(
@@ -76,6 +118,13 @@ class _MoisturizersState extends State<Moisturizers> {
                               fit: BoxFit.cover,
                             ),
                           ),
+                                Padding(
+                      padding: EdgeInsets.all(0),
+                      child: Text(
+                        product.price,
+                        textAlign: TextAlign.center,
+                      ),
+                      ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(

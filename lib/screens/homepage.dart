@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lush_temple_app/components/product_item_tile.dart';
-import 'package:lush_temple_app/screens/accounts/login.dart';
+import 'package:lush_temple_app/screens/accounts/profile.dart';
 import 'package:lush_temple_app/screens/inquires/faq.dart';
 import 'package:lush_temple_app/screens/ourstory.dart';
-import 'package:lush_temple_app/screens/products/odivinelotion.dart';
-import 'package:lush_temple_app/screens/products/odivinescrub.dart';
+import 'package:lush_temple_app/screens/productDetailspage.dart';
 import 'package:lush_temple_app/screens/shop/bathshower.dart';
 import 'package:lush_temple_app/screens/shop/candles.dart';
-import 'package:lush_temple_app/screens/shop/checkout.dart';
+import 'package:lush_temple_app/screens/checkout.dart';
 import 'package:lush_temple_app/screens/shop/fragrance.dart';
 import 'package:lush_temple_app/screens/shop/moisturizers.dart';
 import 'package:lush_temple_app/model/cart_model.dart';
@@ -22,6 +20,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
+
   @override
   Widget build(BuildContext context) {
     final productProvider = Provider.of<CartModel>(context);
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Login(),
+                  builder: (BuildContext context) => Profile(),
                 ),
               );
             },
@@ -80,7 +80,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-         
             ExpansionTile(
               title: Text('Body Care'),
               childrenPadding: EdgeInsets.only(left: 16),
@@ -120,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                       builder: (BuildContext context) => Candles(),
                     ),
                   ),
-                ),// Add similar list tiles for other categories
+                ), // Add similar list tiles for other categories
               ],
             ),
             ListTile(
@@ -135,124 +134,125 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-   body: SafeArea(
-  child: SingleChildScrollView(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SizedBox(height: 10),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: Image.asset('assets/IMG_0086.jpg'),
-        ),
-        SizedBox(height: 40),
-        GridView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1/ 1.3,
-            crossAxisSpacing: 10.0, // Adjust spacing between grid items
-            mainAxisSpacing: 16.0, // Adjust spacing between rows
-          ),
-          itemCount: productProvider.shopProducts.length,
-          itemBuilder: (context, index) {
-            final product = productProvider.shopProducts[index];
-            return GestureDetector(
-              onTap: () {
-                // Navigate to different pages based on the item
-                if (index == 0) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (BuildContext context) => DivineLotion()),
-                  );
-                } else if (index == 1) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (BuildContext context) => DivineScrub()),
-                  );
-                } // Add more conditions for other items
-              },
-              child: Card(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    AspectRatio(
-                      aspectRatio: 1.3, // Adjust the aspect ratio as needed
-                      child: Image.asset(
-                        product.image,
-                        fit: BoxFit.cover,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                child: Image.asset('assets/IMG_0086.jpg'),
+              ),
+              SizedBox(height: 40),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1 / 1.3,
+                  crossAxisSpacing: 10.0, // Adjust spacing between grid items
+                  mainAxisSpacing: 16.0, // Adjust spacing between rows
+                ),
+                itemCount: productProvider.shopProducts.length,
+                itemBuilder: (context, index) {
+                  final product = productProvider.shopProducts[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Provider.of<CartModel>(context, listen: false)
+                          .addItemToCart(index);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductDetailPage(
+                            productName: product.name,
+                            productImage: product.image,
+                            productDescription: product.description,
+                            productPrice: product.price,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          AspectRatio(
+                            aspectRatio:
+                                1, // Adjust the aspect ratio as needed
+                            child: Image.asset(
+                              product.image,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Text(
+                              product.price,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Text(
+                              product.name,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(0),
-                      child: Text(
-                        '\$${product.price}ksh',
-                        textAlign: TextAlign.center,
-                      ),
-                      ),
-                    Padding(
-                      padding: const EdgeInsets.all(0),
-                      child: Text(
-                        product.name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
+                  );
+                },
+              ),
+              SizedBox(height: 20), // Add space between GridView and Divider
+              Divider(
+                color: Color.fromRGBO(115, 63, 0, .55),
+                thickness: 2,
+                height: 40, // Adjust height to match spacing
+                indent: 40,
+                endIndent: 40,
+              ),
+              SizedBox(
+                  height: 10), // Add space between Divider and next element
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Image.asset('assets/rosestar.png'),
+              ),
+              SizedBox(
+                  height: 20), // Add space between Divider and next element
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 70.0),
+                child: Image.asset('assets/mybody.jpg'),
+              ),
+              SizedBox(height: 20), // Add space between images
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 88.0),
+                child: Image.asset('assets/IMG_0088.jpg'),
+              ),
+              SizedBox(height: 20), // Add space between images
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                child: Image.asset('assets/temple.jpg'),
+              ),
+              SizedBox(height: 40), // Add space between images
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 39.0),
+                child: Text(
+                  '© Copyright Lush Temple Co.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey,
+                  ),
                 ),
               ),
-            );
-          },
-        ),
-        SizedBox(height: 20), // Add space between GridView and Divider
-        Divider(
-          color: Color.fromRGBO(115, 63, 0, .55),
-          thickness: 2,
-          height: 40, // Adjust height to match spacing
-          indent: 40,
-          endIndent: 40,
-        ),
-           SizedBox(height: 10), // Add space between Divider and next element
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
-          child: Image.asset('assets/rosestar.png'),
-        ),
-        SizedBox(height: 20), // Add space between Divider and next element
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 70.0),
-          child: Image.asset('assets/mybody.jpg'),
-        ),
-        SizedBox(height: 20), // Add space between images
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 88.0),
-          child: Image.asset('assets/IMG_0088.jpg'),
-        ),
-        SizedBox(height: 20), // Add space between images
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 0),
-          child: Image.asset('assets/temple.jpg'),
-        ),
-        SizedBox(height: 40), // Add space between images
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 39.0),
-          child: Text(
-            '© Copyright Lush Temple Co.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.grey,
-            ),
+              SizedBox(height: 20), // Add space at the bottom
+            ],
           ),
         ),
-        SizedBox(height: 20), // Add space at the bottom
-      ],
-    ),
-  ),
-),
-
-
-
+      ),
     );
   }
 }
