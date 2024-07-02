@@ -7,6 +7,7 @@ Lush Temple is a flutter application used for it's e-commerce purposes. It's rep
 
 ![Lush temple poster](https://github.com/nombogo/LushTempleApp/blob/main/ltposter.jpg)
 
+My Database was not visably seen within the project so here would be an example of how a created database would look like alongside the relationships that come along the e-commerence 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
