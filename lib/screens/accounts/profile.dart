@@ -4,7 +4,7 @@ import 'package:lush_temple_app/components/text_box.dart';
 import 'package:lush_temple_app/screens/loadpopup.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key});
+  const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
     await FirebaseAuth.instance.signOut();
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoadingPage()),
+      MaterialPageRoute(builder: (context) => const LoadingPage()),
     );
   }
 
@@ -39,29 +39,29 @@ class _ProfileState extends State<Profile> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Profile',
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
               FirebaseAuth.instance.currentUser?.displayName ?? '',
-              style: TextStyle(fontSize: 16.0),
+              style: const TextStyle(fontSize: 16.0),
             ),
           ],
         ),
         actions: [
           IconButton(
             onPressed: _logout,
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(32),
+        padding: const EdgeInsets.all(32),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'My Details',
               style: TextStyle(
                 fontWeight: FontWeight.bold,

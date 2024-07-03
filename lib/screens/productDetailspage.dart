@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lush_temple_app/model/cart_model.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final String productName;
@@ -8,23 +7,23 @@ class ProductDetailPage extends StatelessWidget {
   final String productPrice;
 
   const ProductDetailPage({
-    Key? key,
+    super.key,
     required this.productName,
     required this.productImage,
     required this.productDescription,
     required this.productPrice,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor:
             Colors.transparent, // Set the background color to transparent
@@ -36,31 +35,31 @@ class ProductDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(productImage),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               productName,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               productDescription,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               productPrice, // Adjust the currency symbol as needed
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 cartItems().addToCart();
                
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text('Added to cart'),
                 ));
               },
-              child: Text('Add to Cart'),
+              child: const Text('Add to Cart'),
             ),
           ],
         ),

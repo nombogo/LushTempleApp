@@ -19,46 +19,46 @@ class _FragranceState extends State<Fragrance> {
     final productProvider = Provider.of<CartModel>(context);
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent, // Set the background color to transparent
         elevation: 0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.phone),
+            icon: const Icon(Icons.phone),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => FAQContact(),
+                  builder: (BuildContext context) => const FAQContact(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Profile(),
+                  builder: (BuildContext context) => const Profile(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.shopping_bag),
+            icon: const Icon(Icons.shopping_bag),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => CheckOut(),
+                  builder: (BuildContext context) => const CheckOut(),
                 ),
               );
             },
@@ -71,7 +71,7 @@ class _FragranceState extends State<Fragrance> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
              const SizedBox(height: 40),
-              Center(
+              const Center(
                 child: Text(
                   'Fragrances',
                   style: TextStyle(
@@ -80,11 +80,11 @@ class _FragranceState extends State<Fragrance> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1 / 1.3,
                   crossAxisSpacing: 10.0,
@@ -119,7 +119,7 @@ class _FragranceState extends State<Fragrance> {
                             ),
                           ),
                                 Padding(
-                      padding: EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
                       child: Text(
                         product.price,
                         textAlign: TextAlign.center,
@@ -129,7 +129,7 @@ class _FragranceState extends State<Fragrance> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               product.name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.center,
@@ -152,17 +152,17 @@ class _FragranceState extends State<Fragrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
         appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent, // Set the background color to transparent
         elevation: 0, // Remove the shadow
       ),
-      body: Center(child: Column(children: [Text('fragrance')],),),
+      body: const Center(child: Column(children: [Text('fragrance')],),),
     );
   }

@@ -13,18 +13,18 @@ class UserRepository {
       // Show success notification
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Your account has been created."),
+          content: const Text("Your account has been created."),
           backgroundColor: Colors.green.withOpacity(0.1),
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
         ),
       );
     } catch (error, stackTrace) {
       // Show error notification
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text("Something went wrong."),
+          content: const Text("Something went wrong."),
           backgroundColor: Colors.red.withOpacity(0.1),
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
         ),
       );
       print("Error: $error");

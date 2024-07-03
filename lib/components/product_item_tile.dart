@@ -8,13 +8,13 @@ class ProductItemTile extends StatefulWidget {
   final Color color;
 
   const ProductItemTile({
-    Key? key,
+    super.key,
     required this.productName,
     required this.productImage,
     required this.productDescription,
     required this.productPrice,
     required this.color,
-  }) : super(key: key);
+  });
 
   String get _productName => productName;
   String get _productImage => productImage;
@@ -30,7 +30,7 @@ class _ProductItemTileState extends State<ProductItemTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
           color: widget.color), // Use widget.color instead of color directly
       child: Column(

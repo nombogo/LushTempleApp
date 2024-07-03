@@ -19,46 +19,46 @@ class _BathShowerState extends State<BathShower> {
     final productProvider = Provider.of<CartModel>(context);
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
          actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.phone),
+            icon: const Icon(Icons.phone),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => FAQContact(),
+                  builder: (BuildContext context) => const FAQContact(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Profile(),
+                  builder: (BuildContext context) => const Profile(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.shopping_bag),
+            icon: const Icon(Icons.shopping_bag),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => CheckOut(),
+                  builder: (BuildContext context) => const CheckOut(),
                 ),
               );
             },
@@ -70,8 +70,8 @@ class _BathShowerState extends State<BathShower> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 40),
-              Center(
+              const SizedBox(height: 40),
+              const Center(
                 child: Text(
                   'Bath & Shower',
                   style: TextStyle(
@@ -80,11 +80,11 @@ class _BathShowerState extends State<BathShower> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1 / 1.3,
                   crossAxisSpacing: 10.0,
@@ -118,7 +118,7 @@ class _BathShowerState extends State<BathShower> {
                             ),
                           ),
                           Padding(
-                      padding: EdgeInsets.all(0),
+                      padding: const EdgeInsets.all(0),
                       child: Text(
                         product.price,
                         textAlign: TextAlign.center,
@@ -128,7 +128,7 @@ class _BathShowerState extends State<BathShower> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               product.name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.center,

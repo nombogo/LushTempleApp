@@ -5,7 +5,7 @@ import 'package:lush_temple_app/screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key});
+  const Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();
@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute<void>(
-          builder: (BuildContext context) => HomePage(),
+          builder: (BuildContext context) => const HomePage(),
         ),
       );
     } catch (e) {
@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
       print("Sign-in error: $e");
       // Show a pop-up message when login fails
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Incorrect email or password'),
         ),
       );
@@ -55,48 +55,48 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent, // Set the background color to transparent
         elevation: 0, // Remove the shadow
       ),
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Image.asset('assets/ltlogo.jpg'),
-              SizedBox(height: 80.0),
+              const SizedBox(height: 80.0),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: TextField(
                   controller: emailController,
                   decoration: InputDecoration(
                     labelText: "Enter Email",
-                    prefixIcon: Icon(Icons.mail),
+                    prefixIcon: const Icon(Icons.mail),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 12.0),
+              const SizedBox(height: 12.0),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: TextField(
@@ -104,7 +104,7 @@ class _LoginState extends State<Login> {
                   obscureText: _isObscured,
                   decoration: InputDecoration(
                     labelText: "Enter Password",
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: const Icon(Icons.lock),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -121,32 +121,32 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 12.0),
+              const SizedBox(height: 12.0),
               ElevatedButton(
-                onPressed: signIn, // Call the signIn function when the button is pressed
-                child: Text(
-                  "Login",
-                  style: TextStyle(color: Colors.white),
-                ),
+                onPressed: signIn,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 69, 43, 0),
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  backgroundColor: const Color.fromARGB(255, 69, 43, 0),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
+                ), // Call the signIn function when the button is pressed
+                child: const Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
-              SizedBox(height: 24.0), // Added space between the login button and the registration text
+              const SizedBox(height: 24.0), // Added space between the login button and the registration text
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => Register(),
+                      builder: (BuildContext context) => const Register(),
                     ),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Don\'t have an account? Register',
                   textAlign: TextAlign.center,
                   style: TextStyle(

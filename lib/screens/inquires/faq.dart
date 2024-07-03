@@ -12,13 +12,13 @@ class _FAQContactState extends State<FAQContact> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor:
             Colors.transparent, // Set the background color to transparent
@@ -44,8 +44,8 @@ class _FAQContactState extends State<FAQContact> {
                 'assets/aq3.png',
                 fit: BoxFit.cover, // Cover the entire container
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 "If you don't see your question answered here, Contact Us!",
                 textAlign: TextAlign.justify,
           
@@ -56,7 +56,7 @@ class _FAQContactState extends State<FAQContact> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => ContactUs(),
+                      builder: (BuildContext context) => const ContactUs(),
                     ),
                   );
                 },

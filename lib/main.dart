@@ -19,13 +19,13 @@ void main() async {
   runApp(
     ChangeNotifierProvider<CartModel>(
       create: (context) => CartModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}); 
+  const MyApp({super.key}); 
 
   @override
   Widget build(BuildContext context) {

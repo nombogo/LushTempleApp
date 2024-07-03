@@ -11,18 +11,18 @@ class _ContactThankYouState extends State<ContactThankYou> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Center(
+      body: const Center(
         child: Text("Thank you for contacting us. We will get back to you soon."),
       ),
     );

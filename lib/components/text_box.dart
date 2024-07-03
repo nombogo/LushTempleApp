@@ -7,11 +7,11 @@ class MyTextBox extends StatelessWidget {
   final TextEditingController phoneNumberController;
   
   const MyTextBox({
-    Key? key,
+    super.key,
     required this.emailController,
     required this.dobController,
     required this.phoneNumberController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,15 @@ class MyTextBox extends StatelessWidget {
         children: [
           TextField(
             controller: emailController,
-            decoration: InputDecoration(labelText: 'Email'),
+            decoration: const InputDecoration(labelText: 'Email'),
           ),
           TextField(
             controller: dobController,
-            decoration: InputDecoration(labelText: 'Date of Birth'),
+            decoration: const InputDecoration(labelText: 'Date of Birth'),
           ),
           TextField(
             controller: phoneNumberController,
-            decoration: InputDecoration(labelText: 'Phone Number'),
+            decoration: const InputDecoration(labelText: 'Phone Number'),
           ),
         ],
       ),

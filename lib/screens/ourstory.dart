@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OurStory extends StatefulWidget {
@@ -13,13 +12,13 @@ class _OurStoryState extends State<OurStory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
         backgroundColor:
             Colors.transparent, // Set the background color to transparent
@@ -30,8 +29,8 @@ class _OurStoryState extends State<OurStory> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
-                child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: SizedBox(
                   height: 180,
                   width: double.infinity, // Make the image span the full width
                   child: Image.asset(
@@ -40,7 +39,7 @@ class _OurStoryState extends State<OurStory> {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 color: Color.fromRGBO(115, 63, 0, .55),
                 thickness: 2,
                 height: 20,
@@ -48,7 +47,7 @@ class _OurStoryState extends State<OurStory> {
                 endIndent: 40,
               ),
               Padding(
-                padding: EdgeInsets.all(24.0), // Add padding around the text
+                padding: const EdgeInsets.all(24.0), // Add padding around the text
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -60,7 +59,7 @@ class _OurStoryState extends State<OurStory> {
                         color: Colors.brown[900],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Text(
                       "The women that make up Lush Temple are the most experienced soap and candle makers of the land of Lush Temple. Founded in Nairobi, Kenya, we believe in the transformative power of nature's bounty. Our holistic body care products are lovingly crafted with the purest ingredients, sourced sustainably from the earth's generous embrace. Each blend is a harmonious symphony of essential oils and botanical wonders, carefully concocted to soothe both body and spirit.",
                       textAlign: TextAlign.justify,
@@ -69,7 +68,7 @@ class _OurStoryState extends State<OurStory> {
                         color: Colors.brown[800],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -81,7 +80,7 @@ class _OurStoryState extends State<OurStory> {
                                 height: 200,
                                 fit: BoxFit.cover,
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 "Sisterhood",
                                 style: TextStyle(
@@ -101,7 +100,7 @@ class _OurStoryState extends State<OurStory> {
                                 height: 200,
                                 fit: BoxFit.cover,
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Text(
                                 "Soap Making",
                                 style: TextStyle(
@@ -115,7 +114,7 @@ class _OurStoryState extends State<OurStory> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Text(
                       "Here at Lush Temple, we meet the Sustainable Development Goal #3 of good health and wellness since our products focus on the health of our clients who may deal with particular skin conditions like eczema, hyperpigmentation. Products for people who need stress relieving self-care products or even for ones who enjoy the ambience and the glorious effects our Lush Temple products give our clients.",
                       textAlign: TextAlign.justify,

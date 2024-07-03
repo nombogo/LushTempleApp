@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lush_temple_app/screens/accounts/profile.dart';
 import 'package:lush_temple_app/screens/inquires/faq.dart';
 import 'package:lush_temple_app/screens/ourstory.dart';
@@ -13,7 +12,7 @@ import 'package:lush_temple_app/model/cart_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,39 +25,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final productProvider = Provider.of<CartModel>(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 223, 171),
+      backgroundColor: const Color.fromARGB(255, 255, 223, 171),
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(115, 63, 0, .55),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.phone),
+            icon: const Icon(Icons.phone),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => FAQContact(),
+                  builder: (BuildContext context) => const FAQContact(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Profile(),
+                  builder: (BuildContext context) => const Profile(),
                 ),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.shopping_bag),
+            icon: const Icon(Icons.shopping_bag),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => CheckOut(),
+                  builder: (BuildContext context) => const CheckOut(),
                 ),
               );
             },
@@ -68,7 +67,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Color.fromRGBO(115, 63, 0, .55),
               ),
@@ -81,53 +80,53 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ExpansionTile(
-              title: Text('Body Care'),
-              childrenPadding: EdgeInsets.only(left: 16),
+              title: const Text('Body Care'),
+              childrenPadding: const EdgeInsets.only(left: 16),
               children: [
                 ListTile(
-                  title: Text('Bath & Shower'),
+                  title: const Text('Bath & Shower'),
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => BathShower(),
+                      builder: (BuildContext context) => const BathShower(),
                     ),
                   ),
                 ),
                 ListTile(
-                  title: Text('Moisturizers'),
+                  title: const Text('Moisturizers'),
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => Moisturizers(),
+                      builder: (BuildContext context) => const Moisturizers(),
                     ),
                   ),
                 ),
                 ListTile(
-                  title: Text('Fragrance'),
+                  title: const Text('Fragrance'),
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => Fragrance(),
+                      builder: (BuildContext context) => const Fragrance(),
                     ),
                   ),
                 ),
                 ListTile(
-                  title: Text('Candles'),
+                  title: const Text('Candles'),
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => Candles(),
+                      builder: (BuildContext context) => const Candles(),
                     ),
                   ),
                 ), // Add similar list tiles for other categories
               ],
             ),
             ListTile(
-              title: Text('Our Story'),
+              title: const Text('Our Story'),
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => OurStory(),
+                  builder: (BuildContext context) => const OurStory(),
                 ),
               ),
             ),
@@ -139,16 +138,16 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Image.asset('assets/IMG_0086.jpg'),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1 / 1.3,
                   crossAxisSpacing: 10.0, // Adjust spacing between grid items
@@ -186,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(0),
+                            padding: const EdgeInsets.all(0),
                             child: Text(
                               product.price,
                               textAlign: TextAlign.center,
@@ -196,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.all(0),
                             child: Text(
                               product.name,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: const TextStyle(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -206,38 +205,38 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-              SizedBox(height: 20), // Add space between GridView and Divider
-              Divider(
+              const SizedBox(height: 20), // Add space between GridView and Divider
+              const Divider(
                 color: Color.fromRGBO(115, 63, 0, .55),
                 thickness: 2,
                 height: 40, // Adjust height to match spacing
                 indent: 40,
                 endIndent: 40,
               ),
-              SizedBox(
+              const SizedBox(
                   height: 10), // Add space between Divider and next element
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: Image.asset('assets/rosestar.png'),
               ),
-              SizedBox(
+              const SizedBox(
                   height: 20), // Add space between Divider and next element
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 70.0),
+                padding: const EdgeInsets.symmetric(horizontal: 70.0),
                 child: Image.asset('assets/mybody.jpg'),
               ),
-              SizedBox(height: 20), // Add space between images
+              const SizedBox(height: 20), // Add space between images
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 88.0),
+                padding: const EdgeInsets.symmetric(horizontal: 88.0),
                 child: Image.asset('assets/IMG_0088.jpg'),
               ),
-              SizedBox(height: 20), // Add space between images
+              const SizedBox(height: 20), // Add space between images
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Image.asset('assets/temple.jpg'),
               ),
-              SizedBox(height: 40), // Add space between images
-              Padding(
+              const SizedBox(height: 40), // Add space between images
+              const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 39.0),
                 child: Text(
                   '© Copyright Lush Temple Co.',
@@ -248,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20), // Add space at the bottom
+              const SizedBox(height: 20), // Add space at the bottom
             ],
           ),
         ),
