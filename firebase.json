@@ -1,1 +1,49 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"lushtempleapp","appId":"1:244602236458:android:fcea91fc8f418536b0dd53","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"lushtempleapp","appId":"1:244602236458:ios:0e2e3df9f22198bab0dd53","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"lushtempleapp","appId":"1:244602236458:ios:0e2e3df9f22198bab0dd53","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"lushtempleapp","configurations":{"android":"1:244602236458:android:fcea91fc8f418536b0dd53","ios":"1:244602236458:ios:0e2e3df9f22198bab0dd53","macos":"1:244602236458:ios:0e2e3df9f22198bab0dd53","web":"1:244602236458:web:2bf2bc55a0122434b0dd53","windows":"1:244602236458:web:805bb0c6eb4bc8ddb0dd53"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "lushtempleapp",
+          "appId": "1:244602236458:android:fcea91fc8f418536b0dd53",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "lushtempleapp",
+          "appId": "1:244602236458:ios:0e2e3df9f22198bab0dd53",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "lushtempleapp",
+          "appId": "1:244602236458:ios:0e2e3df9f22198bab0dd53",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "lushtempleapp",
+          "configurations": {
+            "android": "1:244602236458:android:fcea91fc8f418536b0dd53",
+            "ios": "1:244602236458:ios:0e2e3df9f22198bab0dd53",
+            "macos": "1:244602236458:ios:0e2e3df9f22198bab0dd53",
+            "web": "1:244602236458:web:2bf2bc55a0122434b0dd53",
+            "windows": "1:244602236458:web:805bb0c6eb4bc8ddb0dd53"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
